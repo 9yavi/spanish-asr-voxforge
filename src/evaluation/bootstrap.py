@@ -7,11 +7,12 @@ from pathlib import Path
 import numpy as np
 import jiwer
 
-from scripts.normalize_text import normalize_text
+from src.evaluation.normalize_text import normalize_text
 
 
-TEST_FILE = Path("data/splits/test.jsonl")
-PREDICTIONS_DIR = Path("data/predictions")
+ROOT = Path(__file__).resolve().parents[2]
+TEST_FILE = ROOT / "data/splits/test.jsonl"
+PREDICTIONS_DIR = ROOT / "data/predictions"
 
 
 def load_references():

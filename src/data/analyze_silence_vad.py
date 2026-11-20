@@ -6,8 +6,9 @@ import soundfile as sf
 import webrtcvad
 from pathlib import Path
 
-METADATA = Path("data/raw/metadata.jsonl")
-OUTPUT = Path("data/splits/silence_analysis_vad.csv")
+ROOT = Path(__file__).resolve().parents[2]
+METADATA = ROOT / "data/raw/metadata.jsonl"
+OUTPUT = ROOT / "data/splits/silence_analysis_vad.csv"
 
 SAMPLE_RATE = 16000
 FRAME_MS = 20

@@ -4,8 +4,9 @@ import random
 from collections import defaultdict
 from pathlib import Path
 
-INPUT_FILE = Path("data/raw/metadata.jsonl")
-OUTPUT_DIR = Path("data/splits")
+ROOT = Path(__file__).resolve().parents[2]
+INPUT_FILE = ROOT / "data/raw/metadata.jsonl"
+OUTPUT_DIR = ROOT / "data/splits"
 
 SEED = 42
 

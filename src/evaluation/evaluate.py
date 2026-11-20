@@ -8,13 +8,14 @@ from pathlib import Path
 
 import jiwer
 
-from scripts.normalize_text import normalize_text
+from src.evaluation.normalize_text import normalize_text
 
 
-TEST_FILE = Path("data/splits/test.jsonl")
-PREDICTIONS_DIR = Path("data/predictions")
-KEY_TERMS_FILE = Path("data/key_terms.txt")
-RESULTS_DIR = Path("results")
+ROOT = Path(__file__).resolve().parents[2]
+TEST_FILE = ROOT / "data/splits/test.jsonl"
+PREDICTIONS_DIR = ROOT / "data/predictions"
+KEY_TERMS_FILE = ROOT / "data/key_terms.txt"
+RESULTS_DIR = ROOT / "results"
 
 # Explicit transformations:
 # Preserve case and punctuation for raw evaluation.

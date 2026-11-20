@@ -7,8 +7,9 @@ from pathlib import Path
 
 DATASET_NAME = "ciempiess/voxforge_spanish"
 
-AUDIO_DIR = Path("data/raw/audio")
-METADATA_FILE = Path("data/raw/metadata.jsonl")
+ROOT = Path(__file__).resolve().parents[2]
+AUDIO_DIR = ROOT / "data/raw/audio"
+METADATA_FILE = ROOT / "data/raw/metadata.jsonl"
 
 AUDIO_DIR.mkdir(parents=True, exist_ok=True)
 

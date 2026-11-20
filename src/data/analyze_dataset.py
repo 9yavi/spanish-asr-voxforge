@@ -6,7 +6,7 @@ import unicodedata
 from pathlib import Path
 from collections import Counter, defaultdict
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 METADATA = ROOT / "data/raw/metadata.jsonl"
 AUDIO_DIR = ROOT / "data/raw/audio"
 

@@ -227,3 +227,15 @@ __marimo__/
 # Dataset audio files
 
 data/raw/test/
+# Model checkpoints and large artifacts
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+
+# Experiment outputs
+runs/
+wandb/
+lightning_logs/
+tensorboard/

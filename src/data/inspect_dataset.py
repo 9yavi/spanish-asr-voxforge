@@ -4,7 +4,7 @@ import soundfile as sf
 from pathlib import Path
 from collections import Counter
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 AUDIO_DIR = ROOT / "data" / "raw" / "audio"
 METADATA_FILE = ROOT / "data" / "raw" / "metadata.jsonl"
 
