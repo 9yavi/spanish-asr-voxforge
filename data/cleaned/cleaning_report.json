@@ -1,0 +1,9 @@
+{
+  "input_records": 21692,
+  "accepted_records": 21692,
+  "excluded_records": 0,
+  "transcripts_normalized": 0,
+  "audio_validation": "16kHz mono, readable, non-empty",
+  "audio_files_modified": 0,
+  "exclusions": []
+}
