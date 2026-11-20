@@ -225,5 +225,5 @@ __marimo__/
 .venv/
 
 # Dataset audio files
-data/raw/audio/
+
 data/raw/test/
