@@ -1,0 +1,37 @@
+{
+  "settings": {
+    "model": "nvidia/parakeet-tdt-0.6b-v3",
+    "revision": "541d1f99c6b0c3cd0b11a95167540bb8edefd82b",
+    "checkpoint": "model.safetensors",
+    "weights_sha256": "3a2026366188c8c68598edbbff92f8d11590a08e0ae2e6775544e7b07d6a5e11",
+    "task": "Spanish transcription",
+    "decoding": {
+      "language": "automatic",
+      "strategy": "greedy TDT"
+    },
+    "device": "cuda:0",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "dtype": "torch.bfloat16",
+    "batch_size": 8,
+    "versions": {
+      "python": "3.12.14",
+      "torch": "2.10.0+cu126",
+      "cuda": "12.6",
+      "transformers": "5.23.0"
+    },
+    "inference_timing": "Synchronized batch time divided by size. Includes processing, generation and text decoding; excludes reading WAVs."
+  },
+  "split": "test",
+  "split_sha256": "b6c1c4a5facbd6a682a1d358fbb9ce7e2e5a98eb246b33b032996a76e4ebe90a",
+  "utterances": 3256,
+  "validation_audio_ids": [
+    "VXSP_M_0026_ARG_0024",
+    "VXSP_M_1270_SPN_0020",
+    "VXSP_M_1480_SPN_0014",
+    "VXSP_M_0859_SPN_0001",
+    "VXSP_M_1466_SPN_0027",
+    "VXSP_F_0439_SPN_0001",
+    "VXSP_M_1556_MEX_0028",
+    "VXSP_M_1590_MEX_0033"
+  ]
+}
