@@ -1,0 +1,19 @@
+{
+  "model": "jonatasgrosman/wav2vec2-large-xlsr-53-spanish",
+  "revision": "96d7e9b4e4a78af515a3c6d3cee7c0826045d276",
+  "split": "test",
+  "split_sha256": "b6c1c4a5facbd6a682a1d358fbb9ce7e2e5a98eb246b33b032996a76e4ebe90a",
+  "utterances": 3256,
+  "audio_seconds": 27084.144499999988,
+  "wall_seconds": 349.79177830000117,
+  "language": "es",
+  "decoding": "CTC greedy",
+  "batch_size": 1,
+  "dtype": "bfloat16",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "torch": "2.10.0+cu126",
+  "cuda": "12.6",
+  "transformers": "4.57.6",
+  "python": "3.12.14",
+  "timing": "synchronized model forward pass per utterance"
+}
