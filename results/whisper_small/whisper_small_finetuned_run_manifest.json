@@ -1,0 +1,77 @@
+{
+  "model": "openai/whisper-small",
+  "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+  "base_weights_sha256": "1d7734884874f1a1513ed9aa760a4f8e97aaa02fd6d93a3a85d27b2ae9ca596b",
+  "checkpoint": "epoch-2",
+  "adapter_sha256": "1161e584e201ba34a8e3283607763a0d3a4df705ae4c0287587ba0831247fb94",
+  "language": "es",
+  "task": "transcribe",
+  "split": "test",
+  "split_sha256": "b6c1c4a5facbd6a682a1d358fbb9ce7e2e5a98eb246b33b032996a76e4ebe90a",
+  "utterances": 3256,
+  "preprocessing": "16 kHz mono WAV; Whisper log-Mel features",
+  "decoding": {
+    "num_beams": 3,
+    "do_sample": false,
+    "max_new_tokens": 220
+  },
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "device": "cuda",
+  "dtype": "torch.bfloat16",
+  "batch_size": 8,
+  "inference_timing": "Synchronized generate() batch wall time divided by batch size; excludes audio and decoding to text.",
+  "versions": {
+    "python": "3.12.14",
+    "torch": "2.10.0+cu126",
+    "cuda": "12.6",
+    "transformers": "4.57.6",
+    "peft": "0.18.1"
+  },
+  "validation_selection": {
+    "selected": {
+      "num_beams": 3,
+      "dev_wer": 0.02346805736636245
+    },
+    "trials": [
+      {
+        "num_beams": 1,
+        "dev_wer": 0.026890482398956975
+      },
+      {
+        "num_beams": 3,
+        "dev_wer": 0.02346805736636245
+      }
+    ]
+  },
+  "validation_utterances": 384,
+  "validation_split_sha256": "054683e581ff5a4458e7d134849f3303d9765d9601564eb946f9fbb0affb4d76",
+  "fine_tuning": {
+    "method": "decoder attention LoRA",
+    "seed": 42,
+    "train_count": 15179,
+    "excluded_over_30_seconds": [
+      "VXSP_M_1698_UNK_0028"
+    ],
+    "train_sha256": "a1900193a29c24c09409a1dd5895b4c286f775cba6183a33ab4271bd95ef08c2",
+    "batch_size": 24,
+    "learning_rate": 0.0002,
+    "optimizer": "AdamW",
+    "history": [
+      {
+        "epoch": 1,
+        "checkpoint": "epoch-1",
+        "dev_wer": 0.03243155149934811,
+        "mean_training_loss": 0.20661506833623372,
+        "training_seconds": 491.62818900001
+      },
+      {
+        "epoch": 2,
+        "checkpoint": "epoch-2",
+        "dev_wer": 0.026890482398956975,
+        "mean_training_loss": 0.03769179128734233,
+        "training_seconds": 491.18856189999497
+      }
+    ],
+    "best_checkpoint": "epoch-2"
+  }
+}

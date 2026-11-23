@@ -1,0 +1,42 @@
+{
+  "base_revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+  "dev_sha256": "054683e581ff5a4458e7d134849f3303d9765d9601564eb946f9fbb0affb4d76",
+  "dev_count": 384,
+  "adapter": "epoch-2",
+  "adapter_sha256": "1161e584e201ba34a8e3283607763a0d3a4df705ae4c0287587ba0831247fb94",
+  "batch_size": 8,
+  "variants": {
+    "baseline": {
+      "selected": {
+        "num_beams": 3,
+        "dev_wer": 0.07822685788787484
+      },
+      "trials": [
+        {
+          "num_beams": 1,
+          "dev_wer": 0.08458279009126467
+        },
+        {
+          "num_beams": 3,
+          "dev_wer": 0.07822685788787484
+        }
+      ]
+    },
+    "finetuned": {
+      "selected": {
+        "num_beams": 3,
+        "dev_wer": 0.02346805736636245
+      },
+      "trials": [
+        {
+          "num_beams": 1,
+          "dev_wer": 0.026890482398956975
+        },
+        {
+          "num_beams": 3,
+          "dev_wer": 0.02346805736636245
+        }
+      ]
+    }
+  }
+}

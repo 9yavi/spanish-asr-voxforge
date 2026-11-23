@@ -1,0 +1,48 @@
+{
+  "model": "openai/whisper-small",
+  "revision": "973afd24965f72e36ca33b3055d56a652f456b4d",
+  "base_weights_sha256": "1d7734884874f1a1513ed9aa760a4f8e97aaa02fd6d93a3a85d27b2ae9ca596b",
+  "checkpoint": "pretrained",
+  "adapter_sha256": null,
+  "language": "es",
+  "task": "transcribe",
+  "split": "test",
+  "split_sha256": "b6c1c4a5facbd6a682a1d358fbb9ce7e2e5a98eb246b33b032996a76e4ebe90a",
+  "utterances": 3256,
+  "preprocessing": "16 kHz mono WAV; Whisper log-Mel features",
+  "decoding": {
+    "num_beams": 3,
+    "do_sample": false,
+    "max_new_tokens": 220
+  },
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "device": "cuda",
+  "dtype": "torch.bfloat16",
+  "batch_size": 8,
+  "inference_timing": "Synchronized generate() batch wall time divided by batch size; excludes audio and decoding to text.",
+  "versions": {
+    "python": "3.12.14",
+    "torch": "2.10.0+cu126",
+    "cuda": "12.6",
+    "transformers": "4.57.6",
+    "peft": "0.18.1"
+  },
+  "validation_selection": {
+    "selected": {
+      "num_beams": 3,
+      "dev_wer": 0.07822685788787484
+    },
+    "trials": [
+      {
+        "num_beams": 1,
+        "dev_wer": 0.08458279009126467
+      },
+      {
+        "num_beams": 3,
+        "dev_wer": 0.07822685788787484
+      }
+    ]
+  },
+  "validation_utterances": 384,
+  "validation_split_sha256": "054683e581ff5a4458e7d134849f3303d9765d9601564eb946f9fbb0affb4d76"
+}

@@ -1,0 +1,127 @@
+{
+  "model": "parakeet_tdt_06b_v3",
+  "utterances": 3256,
+  "raw": {
+    "WER": 0.21475311159006621,
+    "CER": 0.0490061493372675,
+    "MER": 0.2135217575968184,
+    "WIL": 0.3731287067646998
+  },
+  "normalized": {
+    "WER": 0.04269820003495078,
+    "CER": 0.01735972134471683,
+    "MER": 0.0424656740629164,
+    "WIL": 0.07111171399968985
+  },
+  "key_term_recall": {
+    "overall_recall": 0.9697185607410046,
+    "recognized": 2722,
+    "total": 2807,
+    "per_term": {
+      "ojeda": {
+        "reference_count": 213,
+        "recognized_count": 188,
+        "recall": 0.8826291079812206
+      },
+      "cristales": {
+        "reference_count": 227,
+        "recognized_count": 226,
+        "recall": 0.9955947136563876
+      },
+      "violines": {
+        "reference_count": 153,
+        "recognized_count": 148,
+        "recall": 0.9673202614379085
+      },
+      "rectángulos": {
+        "reference_count": 156,
+        "recognized_count": 151,
+        "recall": 0.967948717948718
+      },
+      "camareros": {
+        "reference_count": 156,
+        "recognized_count": 153,
+        "recall": 0.9807692307692307
+      },
+      "pilastra": {
+        "reference_count": 144,
+        "recognized_count": 141,
+        "recall": 0.9791666666666666
+      },
+      "balanceo": {
+        "reference_count": 148,
+        "recognized_count": 139,
+        "recall": 0.9391891891891891
+      },
+      "blancura": {
+        "reference_count": 139,
+        "recognized_count": 133,
+        "recall": 0.9568345323741008
+      },
+      "ampollas": {
+        "reference_count": 147,
+        "recognized_count": 138,
+        "recall": 0.9387755102040817
+      },
+      "oblicuas": {
+        "reference_count": 73,
+        "recognized_count": 69,
+        "recall": 0.9452054794520548
+      },
+      "cuerdas": {
+        "reference_count": 73,
+        "recognized_count": 72,
+        "recall": 0.9863013698630136
+      },
+      "chaqueta": {
+        "reference_count": 78,
+        "recognized_count": 77,
+        "recall": 0.9871794871794872
+      },
+      "botones": {
+        "reference_count": 78,
+        "recognized_count": 77,
+        "recall": 0.9871794871794872
+      },
+      "dorados": {
+        "reference_count": 78,
+        "recognized_count": 77,
+        "recall": 0.9871794871794872
+      },
+      "perfume": {
+        "reference_count": 172,
+        "recognized_count": 168,
+        "recall": 0.9767441860465116
+      },
+      "jardín": {
+        "reference_count": 168,
+        "recognized_count": 167,
+        "recall": 0.9940476190476191
+      },
+      "piano": {
+        "reference_count": 153,
+        "recognized_count": 152,
+        "recall": 0.9934640522875817
+      },
+      "ventanas": {
+        "reference_count": 156,
+        "recognized_count": 154,
+        "recall": 0.9871794871794872
+      },
+      "reflejo": {
+        "reference_count": 148,
+        "recognized_count": 147,
+        "recall": 0.9932432432432432
+      },
+      "eléctricas": {
+        "reference_count": 147,
+        "recognized_count": 145,
+        "recall": 0.9863945578231292
+      }
+    }
+  },
+  "total_audio_hours": 7.523375556336509,
+  "total_inference_seconds": 143.4902412998199,
+  "RTF": 0.005297941072141565,
+  "RTFx": 188.7525713070595
+}

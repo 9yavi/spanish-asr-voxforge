@@ -243,32 +243,35 @@ A confidence interval that does not include zero indicates a statistically signi
 
 ## 8. Models and Baselines
 
-The project is designed to evaluate the following Spanish-capable systems:
+All results below use the same 3,256 test utterances, reference transcripts, and text normalization. WER measures word edits relative to reference word count. CER measures character edits, including errors on accented letters. Lower is better.
 
-| Model / Architecture | Evaluation Status |
-|---|---|
-| MFCC / Log-Mel + GMM-HMM | Pending |
-| CTC Encoder | Pending |
-| Attention Encoder-Decoder | Pending |
-| Transducer / RNN-T | Pending |
-| Spanish-finetuned wav2vec 2.0 + CTC | Pending |
-| Spanish-finetuned HuBERT + CTC | Pending |
-| Multilingual Whisper | Pending |
-| NVIDIA Canary 1B v2 | Pending |
-| NVIDIA Parakeet TDT 0.6B v3 | Pending |
-| Qwen3-ASR | Pending |
+| Baseline checkpoint | Revision | WER ↓ | CER ↓ |
+|---|---|---:|---:|
+| `openai/whisper-small` | `973afd24965f72e36ca33b3055d56a652f456b4d` | 8.20% | 3.01% |
+| `Qwen/Qwen3-ASR-0.6B` | `5eb144179a02acc5e5ba31e748d22b0cf3e303b0` | 7.51% | 2.82% |
+| `nvidia/canary-1b-v2` | `d455706339a6b32e1aa40f82c713a482a0c938e2` | 4.61% | 1.89% |
+| `nvidia/parakeet-tdt-0.6b-v3` | `541d1f99c6b0c3cd0b11a95167540bb8edefd82b` | 4.27% | 1.74% |
+| `jonatasgrosman/wav2vec2-large-xlsr-53-spanish` | `96d7e9b4e4a78af515a3c6d3cee7c0826045d276` | 8.52% | 2.47% |
 
-Only models that support Spanish will be evaluated. Unsupported models must be documented with their model-card references and the reason they were not evaluated.
+`openai/whisper-small` is the multilingual Whisper checkpoint used for Spanish transcription. See the [generated evaluation CSV](results/evaluation_results.csv) for the full metrics and the [multilingual baseline run notes](contributions/member2_baselines.md) for environment and inference commands.
+
+The [wav2vec 2.0 run notes](results/wav2vec2_spanish/run_notes.md) document Spanish CTC greedy decoding.
+
+**Not evaluated in this benchmark:** GMM-HMM with MFCC or log-mel features, standalone CTC encoder, attention encoder-decoder or hybrid CTC/attention, standalone RNN-T, and Spanish HuBERT + CTC.
 
 Pretrained models evaluated without additional team training are reported as baselines. Team fine-tuning experiments are reported separately as project contributions.
 
 ## 9. Training and Experiments
 
-The team will conduct its own fine-tuning experiments using the training split.
+| Team contribution | WER ↓ | CER ↓ |
+|---|---:|---:|
+| `openai/whisper-small` + decoder-attention LoRA (`epoch-2`) | 3.26% | 1.72% |
 
 The validation split is used for checkpoint selection and decoding configuration. The test split is reserved for final evaluation.
 
-Model-specific training procedures, hyperparameters, checkpoints, and experiment details will be documented by the responsible team members.
+We trained LoRA for two epochs on 15,179 training clips, excluding one clip longer than 30 seconds. We used seed 42 and learning rate `2e-4`. We selected the adapter and decoding settings using a fixed sample of 384 validation clips. The WER reduction versus the unmodified Whisper checkpoint was 4.94 percentage points on this test set.
+
+Paired utterance bootstrap (10,000 replicates, seed 42) gave a 95% confidence interval of 3.93 to 5.71 percentage points for that WER reduction. See the [Whisper run notes](contributions/whisper_small.md) for the training and inference commands.
 
 ## 10. Installation
 
@@ -359,7 +362,7 @@ Model predictions must be saved as CSV files under `data/predictions/`, followin
 ### Evaluate All Models
 
 ```bash
-python src/evaluation/evaluate.py
+python -m src.evaluation.evaluate
 ```
 
 This evaluates all prediction CSV files in `data/predictions/`, excluding `template.csv`.
@@ -367,7 +370,7 @@ This evaluates all prediction CSV files in `data/predictions/`, excluding `templ
 ### Evaluate a Specific Model
 
 ```bash
-python src/evaluation/evaluate.py --model MODEL_NAME
+python -m src.evaluation.evaluate --model MODEL_NAME
 ```
 
 Replace `MODEL_NAME` with the prediction filename without the `.csv` extension.
@@ -375,7 +378,7 @@ Replace `MODEL_NAME` with the prediction filename without the `.csv` extension.
 For example:
 
 ```bash
-python src/evaluation/evaluate.py --model whisper_small
+python -m src.evaluation.evaluate --model whisper_small_baseline
 ```
 
 The evaluation pipeline checks prediction IDs against the test set and generates:
@@ -414,7 +417,7 @@ Model-specific installation and inference commands will be documented alongside 
 - The test set is speaker-independent but not text-independent.
 - Session identifiers were not available in the inspected metadata.
 - Transcript-to-audio semantic alignment has not been manually verified for every recording.
-- No real model predictions or final model comparisons have been completed yet.
+- Timing protocols differ across models. We exclude speed from the cross-model comparison.
 
 ## 16. Team Contributions
 
