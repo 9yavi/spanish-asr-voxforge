@@ -251,10 +251,13 @@ All results below use the same 3,256 test utterances, reference transcripts, and
 | `Qwen/Qwen3-ASR-0.6B` | `5eb144179a02acc5e5ba31e748d22b0cf3e303b0` | 7.51% | 2.82% |
 | `nvidia/canary-1b-v2` | `d455706339a6b32e1aa40f82c713a482a0c938e2` | 4.61% | 1.89% |
 | `nvidia/parakeet-tdt-0.6b-v3` | `541d1f99c6b0c3cd0b11a95167540bb8edefd82b` | 4.27% | 1.74% |
+| `jonatasgrosman/wav2vec2-large-xlsr-53-spanish` | `96d7e9b4e4a78af515a3c6d3cee7c0826045d276` | 8.52% | 2.47% |
 
 `openai/whisper-small` is the multilingual Whisper checkpoint used for Spanish transcription. See the [generated evaluation CSV](results/evaluation_results.csv) for the full metrics and the [multilingual baseline run notes](contributions/member2_baselines.md) for environment and inference commands.
 
-**Not evaluated in this benchmark:** GMM-HMM with MFCC or log-mel features, standalone CTC encoder, attention encoder-decoder or hybrid CTC/attention, standalone RNN-T, Spanish wav2vec 2.0 + CTC, and Spanish HuBERT + CTC.
+The [wav2vec 2.0 run notes](results/wav2vec2_spanish/run_notes.md) document Spanish CTC greedy decoding.
+
+**Not evaluated in this benchmark:** GMM-HMM with MFCC or log-mel features, standalone CTC encoder, attention encoder-decoder or hybrid CTC/attention, standalone RNN-T, and Spanish HuBERT + CTC.
 
 Pretrained models evaluated without additional team training are reported as baselines. Team fine-tuning experiments are reported separately as project contributions.
 
@@ -414,7 +417,7 @@ Model-specific installation and inference commands will be documented alongside 
 - The test set is speaker-independent but not text-independent.
 - Session identifiers were not available in the inspected metadata.
 - Transcript-to-audio semantic alignment has not been manually verified for every recording.
-- Whisper timing covers model generation. Timing for the other baselines includes preprocessing and decoding. We exclude speed from the cross-model comparison.
+- Timing protocols differ across models. We exclude speed from the cross-model comparison.
 
 ## 16. Team Contributions
 
