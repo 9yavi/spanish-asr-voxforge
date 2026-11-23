@@ -1,6 +1,6 @@
 # Member 2 multilingual baselines
 
-This contribution covers the pretrained Qwen3-ASR, Canary, and Parakeet portion of Member 2's work. The [Whisper-small contribution](whisper_small.md) documents the Whisper baseline and the team's LoRA fine-tuning.
+These run notes cover the pretrained Qwen3-ASR, Canary, and Parakeet experiments. The [Whisper run notes](whisper_small.md) document the Whisper baseline and the team's LoRA fine-tuning.
 
 | Model | Run name | Language setting |
 | --- | --- | --- |

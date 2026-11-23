@@ -1,4 +1,4 @@
-# Whisper-small contribution
+# Whisper Small experiment notes
 
 This contribution evaluates the multilingual [Whisper-small checkpoint](https://huggingface.co/openai/whisper-small/tree/973afd24965f72e36ca33b3055d56a652f456b4d) in Spanish transcription mode. It also fine-tunes low-rank adapters on the query and value projections of Whisper's decoder attention layers.
 
@@ -53,4 +53,3 @@ Each variant was then run once on all 3,256 test recordings with beam width 3 an
 Fine-tuning lowered normalized test WER by 4.94 percentage points. Paired bootstrap over 10,000 replicates gave a 95% confidence interval of 3.93 to 5.71 percentage points for the reduction.
 
 The team's test split holds out speakers. Most test transcripts also appear in training, so the test scores measure recognition of new speakers reading largely familiar text.
-

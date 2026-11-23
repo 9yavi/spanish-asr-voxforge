@@ -253,7 +253,7 @@ All results below use the same 3,256 test utterances, reference transcripts, and
 | `nvidia/parakeet-tdt-0.6b-v3` | `541d1f99c6b0c3cd0b11a95167540bb8edefd82b` | 4.27% | 1.74% |
 | `jonatasgrosman/wav2vec2-large-xlsr-53-spanish` | `96d7e9b4e4a78af515a3c6d3cee7c0826045d276` | 8.52% | 2.47% |
 
-`openai/whisper-small` is the multilingual Whisper checkpoint used for Spanish transcription. See the [generated evaluation CSV](results/evaluation_results.csv) for the full metrics and the [multilingual baseline run notes](contributions/member2_baselines.md) for environment and inference commands.
+`openai/whisper-small` is the multilingual Whisper checkpoint used for Spanish transcription. See the [generated evaluation CSV](results/evaluation_results.csv) for the full metrics and the [multilingual baseline run notes](docs/member2_baselines.md) for environment and inference commands.
 
 The [wav2vec 2.0 run notes](results/wav2vec2_spanish/run_notes.md) document Spanish CTC greedy decoding.
 
@@ -271,7 +271,7 @@ The validation split is used for checkpoint selection and decoding configuration
 
 We trained LoRA for two epochs on 15,179 training clips, excluding one clip longer than 30 seconds. We used seed 42 and learning rate `2e-4`. We selected the adapter and decoding settings using a fixed sample of 384 validation clips. The WER reduction versus the unmodified Whisper checkpoint was 4.94 percentage points on this test set.
 
-Paired utterance bootstrap (10,000 replicates, seed 42) gave a 95% confidence interval of 3.93 to 5.71 percentage points for that WER reduction. See the [Whisper run notes](contributions/whisper_small.md) for the training and inference commands.
+Paired utterance bootstrap (10,000 replicates, seed 42) gave a 95% confidence interval of 3.93 to 5.71 percentage points for that WER reduction. See the [Whisper run notes](docs/whisper_small.md) for the training and inference commands.
 
 ## 10. Installation
 
@@ -421,15 +421,13 @@ Model-specific installation and inference commands will be documented alongside 
 
 ## 16. Team Contributions
 
-Each team member is responsible for documenting their work in a separate file under `contributions/`.
-
-Contribution records must identify:
-
-- Implemented work.
-- Relevant files.
-- Experiments performed.
-- Results obtained.
-- Commits made by that team member.
+| Team member | Responsibility |
+|---|---|
+| [Yahia Alhamwi](contributions/YAHIA_ALHAMWI_2309115151_9yavi.md) | Dataset preparation and cleaning |
+| [Abdulrahman Alabar](contributions/Abdulrahman_Alabar_220903363_AbdulrahmaAbr.md) | Qwen, Canary, Parakeet, and wav2vec baselines |
+| [Omar Elgamal](contributions/OMAR_ELGAMAL_2309116447_omarelgamal-web.md) | Whisper baseline and baseline comparison |
+| [Amr Alsayed](contributions/Amr_Alsayed_2309115638_amralsayed2005.md) | Team model and LoRA fine-tuning |
+| [Adham Mostafa](contributions/Adham_Mostafa_2309115774_AdhamK1.md) | Documentation, project report, and presentation |
 
 ## 17. References
 
